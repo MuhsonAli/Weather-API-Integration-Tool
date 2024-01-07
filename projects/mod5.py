@@ -213,6 +213,5 @@ def main():
         create_zip(category_name)
 
 
-
 if __name__ == "__main__":
     main()
