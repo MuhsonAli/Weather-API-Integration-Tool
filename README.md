@@ -19,7 +19,6 @@ To use this tool, follow these steps:
 3. Install Required Packages:
    ```bash
    pip install -r requirements.txt
-``
 ## Usage
 Run the tool from the command line:
 ```bash
