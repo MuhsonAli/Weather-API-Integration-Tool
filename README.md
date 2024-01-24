@@ -24,7 +24,7 @@ Run the tool from the command line:
 ```bash
 python weather_main.py
 ```
-Make sure to replace `your-username` with your actual GitHub username. When you add this content to a `README.md` file in your GitHub repository, GitHub will render the Markdown to display the content properly.
+
 
 ## Configuration
 To access weather data, an API key from OpenWeatherMap is required. Place your API key directly in the application's configuration section.
