@@ -35,7 +35,7 @@ def get_current_weather(city_name):
     :param city_name: Name of the city(str)
     :return: A tuple containing the weather data and coordinates if successful, (None, None) otherwise
     """
-    api_key = '54315a17f942b130045d3f43e660adb7'
+    api_key = os.environ.get('OPENWEATHER_API_KEY')
     current_weather = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=metric"
     response = requests.get(current_weather)
 
@@ -56,7 +56,7 @@ def get_weather_forecast(coords):
     :param coords: Dictionary containing 'lat' and 'lon' as latitude and longitude.
     :return: Forecast data if successful, None otherwise.
     """
-    api_key = '54315a17f942b130045d3f43e660adb7'
+    api_key = os.environ.get('OPENWEATHER_API_KEY')
     lat = coords['lat']
     lon = coords['lon']
     weather_forecast = f'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude=hourly,minutely&appid={api_key}'
@@ -118,7 +118,7 @@ def display_forecast(cleaned_forecast):
     """
     for day in cleaned_forecast:
         print(f"Date: {day['date']}")
-        print(f"Temperature: {day['temperature'].get('day')}")
+        print(f"Temperature: {day['temperature'].get('day')} degrees")
         print(f"Daily Low: {day['temperature'].get('min')} degrees")
         print(f"Daily High: {day['temperature'].get('max')} degrees")
         print(f"Morning Temperature: {day['temperature'].get('morning')} degrees")
@@ -181,4 +181,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
